@@ -5,13 +5,20 @@ public class Car extends Vehicle {
     private String type;
     private int doors;
     private int gears;
-    public boolean isManual;
+    private static boolean isManual;
     private int currentGear;
     private int seats;
 
     public Car(){
 
     }
+    public void setisManual(boolean isManual){
+        this.isManual = isManual;
+    }
+    public static boolean getisManual(){
+        return isManual;
+    }
+
 
     public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
         //Hint: Car extends Vehicle
