@@ -2,10 +2,11 @@ package com.driver;
 
 public class F1 extends Car {
     Vehicle myobj = new Vehicle();
+    Car myobj1 = new Car();
     public F1(String name, boolean isManual) {
         //Use arbitrary values for parameters which are not mentioned
         name = myobj.getName();
-        isManual = Car.getisManual();
+        isManual = myobj1.getisManual();
 
     }
     public  void accelerate(int rate){
@@ -19,9 +20,8 @@ public class F1 extends Car {
          * speed 201-250: gear 5
          * speed more than 250: gear 6
          */
-
-        newSpeed = myobj.getCurrentSpeed()+rate;
-        myobj.setcurrentSpeed(newSpeed) ;
+        newSpeed = currentSpeed+rate;
+        currentSpeed = newSpeed;
         if(newSpeed == 0) {
             //Stop the car, set gear as 1
             stop();

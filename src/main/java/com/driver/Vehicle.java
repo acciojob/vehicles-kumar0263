@@ -3,7 +3,7 @@ package com.driver;
 public class Vehicle {
 
     private  String name;
-    private int currentSpeed = 0;
+    public int currentSpeed = 0;
     private int currentDirection = 0;
     public void setName(String name){
         this.name = name;
@@ -12,12 +12,12 @@ public class Vehicle {
         return name;
     }
 
-    public int getCurrentSpeed(){
+    /*public int getCurrentSpeed(){
         return currentSpeed;
-    }
-    public void setcurrentSpeed(int currentSpeed){
+    }*/
+    /*public void setcurrentSpeed(int currentSpeed){
         this.currentSpeed = currentSpeed;
-    }
+    }*/
 
 
     public int getCurrentDirection(){
@@ -31,6 +31,7 @@ public class Vehicle {
     }
 
     public Vehicle() {
+
     }
 
     public void steer(int direction){
