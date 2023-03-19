@@ -8,43 +8,51 @@ public class Car extends Vehicle {
     private  boolean isManual;
     private int currentGear;
     private int seats;
-
-    public Car(){
-
-    }
-    public void setisManual(boolean isManual){
+    
+    public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
+        //Hint: Car extends Vehicle
+        super(name);
+        this.wheels = wheels;
+        this.doors = doors;
+        this.gears = gears;
         this.isManual = isManual;
+        this.type = type;
+        this.seats = seats;
+        this.currentGear = 1;
     }
-    public  boolean getisManual(){
+
+    public int getWheels(){
+        return wheels;
+    }
+    public String getType(){
+        return type;
+    }
+    public int getDoors(){
+        return doors;
+    }
+
+    public int getGears(){
+        return gears;
+    }
+
+    public boolean isManual(){
         return isManual;
     }
 
-
-    public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
-        //Hint: Car extends Vehicle
+    public int getCurrentGear(){
+        return currentGear;
     }
 
+    public int getSeats(){
+        return  seats;
+    }
     public void changeGear(int newGear){
-        if(newGear == 0){
-            currentGear = 1;
-        }else if(newGear>=1 && newGear<=50){
-            currentGear = 1;
-        }else if(newGear>=51 && newGear<=100){
-            currentGear = 2;
-        }else if(newGear>=101 && newGear<=150){
-            currentGear = 3;
-        }else if(newGear>=151 && newGear<=200){
-            currentGear = 4;
-        }else if(newGear>=201 && newGear<=250){
-            currentGear = 5;
-        }else{
-            currentGear = 6;
-        }
+        currentGear = newGear;
         System.out.println("changeGear method called - The gear is changed to: " + currentGear);
     }
 
     public void changeSpeed(int newSpeed, int newDirection){
-
+        move(newSpeed,newDirection);
         System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed + ", and the direction is changed to: " + newDirection + " degrees");
     }
 }
